@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = PrimaryServerHighAvailability::VERSION
   spec.authors       = ["mashan"]
   spec.email         = ["masakazusaito94@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{A monitoring and failover tool.}
+  spec.summary       = %q{A monitoring and failover tool.}
+  spec.homepage      = "https://github.com/mashan/primary_server_high_availability"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
