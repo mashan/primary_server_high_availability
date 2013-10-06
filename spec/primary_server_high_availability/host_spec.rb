@@ -22,7 +22,7 @@ describe "PrimaryServerHighAvailability::Host" do
             :primary => true
           }
         )
-        host.ip.should == IPAddr.new(ip_address)
+        host.ip_address.should == IPAddr.new(ip_address)
         host.primary?.should be_true
         host.alive?.should be_true
       end
@@ -37,7 +37,7 @@ describe "PrimaryServerHighAvailability::Host" do
             :ip_address => ip_address,
           }
         )
-        host.ip.should == IPAddr.new(ip_address)
+        host.ip_address.should == IPAddr.new(ip_address)
         host.primary?.should be_false
         host.alive?.should be_true
       end
@@ -46,7 +46,7 @@ describe "PrimaryServerHighAvailability::Host" do
     context 'invalid IP' do
       it 'railse error' do
         ip_address = '192.0.2.256'
-        lambda { PrimaryServerHighAvailability::Host.new(ip_address) }.should raise_error(ArgumentError)
+        lambda { PrimaryServerHighAvailability::Host.new( :ip_address => ip_address) }.should raise_error(ArgumentError)
       end
     end
   end

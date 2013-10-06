@@ -2,10 +2,10 @@ require 'ipaddr'
 
 module PrimaryServerHighAvailability
   class Host
-    attr_reader :ip
+    attr_reader :ip_address
 
     def initialize(config = {})
-      @ip = IPAddr.new(config[:ip_address])
+      @ip_address = IPAddr.new(config[:ip_address])
       @primary = config[:primary]
       self.up
     end
