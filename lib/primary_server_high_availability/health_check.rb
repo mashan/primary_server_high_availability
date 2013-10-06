@@ -1,4 +1,5 @@
 require 'net/ping'
+require 'mysql'
 
 module PrimaryServerHighAvailability
   class HealthCheck
@@ -14,7 +15,18 @@ module PrimaryServerHighAvailability
     end
 
     class MySQL
+      def initialize(host=nil, user=nil, password=nil, timeout=3)
+        @host = host
+        @user = user
+        @password = password
+        @timeout = timeout
+      end
 
+      def check?
+        command = "mysqladmin ping -h#{@host.ip_address} -u#{@user} --connect_timeout #{@timeout}"
+        command = command + "-p#{@password}" if @password
+        system(command)
+      end
     end
   end
 end
