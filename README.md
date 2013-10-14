@@ -20,6 +20,34 @@ Or install it yourself as:
 
 TODO: Write usage instructions here
 
+## TODOS
+
+* mail sendor
+
+* config loader
+
+
+    hosts:
+      primary: 192.2.0.1
+      secondary:
+        - 192.168.2.0.2
+        - 192.168.2.0.3
+    health_check:
+      check_interval: 3
+      retry_interval: 3
+      retry_times: 3
+      mysql:
+        user: check_user
+        password: 
+        port: 3306 #default
+    failover:
+      command: /usr/local/sbin/myfailover_command
+
+* manager
+    * watching loop
+    * do failover
+
+
 ## Contributing
 
 1. Fork it
